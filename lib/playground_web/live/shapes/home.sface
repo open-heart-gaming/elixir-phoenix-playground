@@ -1,0 +1,10 @@
+<div id="shapes_home" class="shapes">
+  <div class="container mt-4">
+    <div class="title has-text-centered">DYNAMIC STYLES WITH PHOENIX LIVE VIEW</div>
+    <div>Article link</div>
+
+    <DynamicClassesComponent id="shapes_dynamic_classes" />
+    <UsingHooksComponent id="using_hooks" />
+    <ElixirOnlyComponent id="elixir_only" />
+  </div>
+</div>

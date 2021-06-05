@@ -1,0 +1,21 @@
+<div class="using-hooks section">
+  <div class="subtitle">Use JS Hooks for Dynamic Styling</div>
+  <div>Change the shape size using JS Hooks</div>
+
+  <div class="playground" id="resize_playground" :hook="DynamicStyle">
+    <div class="shape" id="resize_shape">
+    </div>
+  </div>
+
+  <div>
+    Size px: {@shape_size} x {@shape_size}
+  </div>
+  <Form for={:style} change="change_size">
+    <Field class="field" name="size">
+      <div class="control">
+        <RangeInput class="slider is-info" step="1" min={@min_size} max={@max_size} value={@shape_size}
+          opts={phx_debounce: 100} />
+      </div>
+    </Field>
+  </Form>
+</div>

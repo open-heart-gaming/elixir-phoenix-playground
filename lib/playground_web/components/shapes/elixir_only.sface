@@ -1,0 +1,28 @@
+<div class="elixir-only section">
+  <div class="subtitle">Elixir-Only Styling</div>
+  <div>Change the shape position using Elixir generated styles</div>
+
+  <div class="playground">
+    <div class="shape" style={@style}>
+    </div>
+  </div>
+
+  <div>
+    Position px: (top: {@y_axis}, left: {@x_axis})
+  </div>
+
+  <Form for={:style} change="change_position">
+    <Field class="field" name="x_axis">
+      <div class="control">
+        X:
+        <RangeInput class="slider is-info" step="1" min={@min} max={@max} value={@x_axis} opts={phx_debounce: 100} />
+      </div>
+    </Field>
+    <Field class="field" name="y_axis">
+      <div class="control">
+        Y:
+        <RangeInput class="slider is-info" step="1" min={@min} max={@max} value={@y_axis} opts={phx_debounce: 100, } />
+      </div>
+    </Field>
+  </Form>
+</div>
