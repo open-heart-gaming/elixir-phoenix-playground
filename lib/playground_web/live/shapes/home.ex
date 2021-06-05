@@ -6,4 +6,5 @@ defmodule PlaygroundWeb.Live.Shapes.Home do
 
   alias PlaygroundWeb.Components.Shapes.DynamicClasses, as: DynamicClassesComponent
   alias PlaygroundWeb.Components.Shapes.UsingHooks, as: UsingHooksComponent
+  alias PlaygroundWeb.Components.Shapes.ElixirOnly, as: ElixirOnlyComponent
 end

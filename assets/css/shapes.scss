@@ -26,4 +26,19 @@
       }
     }
   }
+
+  .elixir-only {
+    .playground {
+      width: 300px;
+      height: 300px;
+      background-color: lightgray;
+      position: relative;
+      .shape {
+        width: 50px;
+        height: 50px;
+        background-color: orange;
+        position: absolute;
+      }
+    }
+  }
 }

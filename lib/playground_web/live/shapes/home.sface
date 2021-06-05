@@ -5,5 +5,6 @@
 
     <DynamicClassesComponent id="shapes_dynamic_classes" />
     <UsingHooksComponent id="using_hooks" />
+    <ElixirOnlyComponent id="elixir_only" />
   </div>
 </div>

@@ -7,6 +7,9 @@
     </div>
   </div>
 
+  <div>
+    Size px: {@shape_size} x {@shape_size}
+  </div>
   <Form for={:style} change="change_size">
     <Field class="field" name="size">
       <div class="control">
