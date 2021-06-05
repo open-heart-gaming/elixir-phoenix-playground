@@ -5,7 +5,6 @@ defmodule PlaygroundWeb.Components.Shapes.ElixirOnly do
 
   alias Surface.Components.Form
   alias Surface.Components.Form.Field
-  alias Surface.Components.Form.Label
   alias Surface.Components.Form.RangeInput
 
   data min, :integer, default: 0
