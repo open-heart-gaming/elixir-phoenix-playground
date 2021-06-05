@@ -1,0 +1,19 @@
+<div class="dynamic-classes section is-medium">
+  <div class="subtitle">Dynamic CSS Classes</div>
+
+  <div class="playground">
+    <div class={"shape", @shape_color}>
+    </div>
+  </div>
+
+  <Form for={:style} change="change_color">
+    <Field class="field" name="color">
+      <div class="control">
+        <label :for={color <- colors()} class="radio">
+          <RadioButton type="radio" value={color} checked={color==@shape_color} />
+          {color}
+        </label>
+      </div>
+    </Field>
+  </Form>
+</div>

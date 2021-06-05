@@ -14,8 +14,10 @@ defmodule PlaygroundWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", PlaygroundWeb do
+  scope "/", PlaygroundWeb.Live do
     pipe_through :browser
+
+    live "/shapes", Shapes.Home
   end
 
   # Other scopes may use custom stacks.
