@@ -4,5 +4,6 @@
     <div>Article link</div>
 
     <DynamicClassesComponent id="shapes_dynamic_classes" />
+    <UsingHooksComponent id="using_hooks" />
   </div>
 </div>

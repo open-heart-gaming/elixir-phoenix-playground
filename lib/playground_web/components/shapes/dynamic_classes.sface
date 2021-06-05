@@ -1,5 +1,6 @@
-<div class="dynamic-classes section is-medium">
+<div class="dynamic-classes section">
   <div class="subtitle">Dynamic CSS Classes</div>
+  <div>Change the shape color by allocating dynamic CSS classes</div>
 
   <div class="playground">
     <div class={"shape", @shape_color}>
