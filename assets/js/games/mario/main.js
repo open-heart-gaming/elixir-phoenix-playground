@@ -11,6 +11,7 @@ loadSprite('tiles', './sprites/tilemap.png', {
     jump: { from: 305, to: 305 },
   },
 });
+console.log('SPRITE LOADED');
 
 layers(['obj', 'ui'], 'obj');
 

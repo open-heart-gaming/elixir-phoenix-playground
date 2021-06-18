@@ -1,13 +1,13 @@
-const LevelOne = [
-  '                                                ',
-  '                                                ',
-  '                                                ',
-  '                                                ',
-  '      %    =*=%=                                ',
-  '                                                ',
-  '                                       (        ',
-  '                       ^     ^         (        ',
-  'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    xxx',
-];
-
-export default LevelOne;
+export default function LevelOne() {
+  return [
+    '                                                ',
+    '                                                ',
+    '                                                ',
+    '                                                ',
+    '      %    =*=%=                                ',
+    '                                                ',
+    '                                       (        ',
+    '                       ^     ^         (        ',
+    'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx    xxx',
+  ];
+}
