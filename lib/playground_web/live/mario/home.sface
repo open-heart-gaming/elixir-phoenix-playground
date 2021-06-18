@@ -1,0 +1,5 @@
+<div id="mario" :hook="Game">
+  <div>TITLE</div>
+  <canvas id="game-canvas" phx-update="ignore">
+  </canvas>
+</div>

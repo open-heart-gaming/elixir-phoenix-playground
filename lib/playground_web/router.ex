@@ -18,6 +18,7 @@ defmodule PlaygroundWeb.Router do
     pipe_through :browser
 
     live "/shapes", Shapes.Home
+    live "/mario", Mario.Home
   end
 
   # Other scopes may use custom stacks.
