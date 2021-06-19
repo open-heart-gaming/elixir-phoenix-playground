@@ -13,8 +13,14 @@
   <Form for={:style} change="change_size">
     <Field class="field" name="size">
       <div class="control">
-        <RangeInput class="slider is-info" step="1" min={@min_size} max={@max_size} value={@shape_size}
-          opts={phx_debounce: 100} />
+        <RangeInput
+          class="slider is-info"
+          step="1"
+          min={@min_size}
+          max={@max_size}
+          value={@shape_size}
+          opts={phx_debounce: 100}
+        />
       </div>
     </Field>
   </Form>

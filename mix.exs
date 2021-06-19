@@ -47,7 +47,8 @@ defmodule Playground.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:surface, github: "surface-ui/surface"}
+      {:surface, "~> 0.5.0"},
+      {:surface_formatter, "~> 0.5.0"}
     ]
   end
 

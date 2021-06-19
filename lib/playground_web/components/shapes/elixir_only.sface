@@ -15,13 +15,27 @@
     <Field class="field" name="x_axis">
       <div class="control">
         X:
-        <RangeInput class="slider is-info" step="1" min={@min} max={@max} value={@x_axis} opts={phx_debounce: 100} />
+        <RangeInput
+          class="slider is-info"
+          step="1"
+          min={@min}
+          max={@max}
+          value={@x_axis}
+          opts={phx_debounce: 100}
+        />
       </div>
     </Field>
     <Field class="field" name="y_axis">
       <div class="control">
         Y:
-        <RangeInput class="slider is-info" step="1" min={@min} max={@max} value={@y_axis} opts={phx_debounce: 100, } />
+        <RangeInput
+          class="slider is-info"
+          step="1"
+          min={@min}
+          max={@max}
+          value={@y_axis}
+          opts={phx_debounce: 100}
+        />
       </div>
     </Field>
   </Form>
