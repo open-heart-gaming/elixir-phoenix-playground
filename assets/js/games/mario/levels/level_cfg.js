@@ -1,5 +1,3 @@
-import '../config';
-
 export default function LevelCfg() {
   return {
     width: 16,

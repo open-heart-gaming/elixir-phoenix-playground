@@ -1,5 +1,6 @@
-<div id="mario" :hook="Game">
-  <div>TITLE</div>
-  <canvas id="game-canvas" phx-update="ignore">
-  </canvas>
+<div id="mario" >
+  <div class="container mt-4">
+    <RegisterComponent :if={!name_present(@name)} />
+    <canvas :if={name_present(@name)}  id="game-canvas" phx-update="ignore" :hook="Game" />
+  </div>
 </div>

@@ -1,4 +1,3 @@
-import '../config';
 import LevelOne from '../levels/level_one';
 import LevelTwo from '../levels/level_two';
 import LevelCfg from '../levels/level_cfg';

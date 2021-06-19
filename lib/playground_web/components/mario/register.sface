@@ -1,0 +1,19 @@
+<div>
+  <Form for={:user} submit="register">
+    <Field name="name" class="field">
+      <div class="control">
+        <TextInput
+          class="input is-medium is-rounded"
+          opts={placeholder: "Your cool captain name", required: true, minlength: 2, maxlength: 5}
+        />
+      </div>
+    </Field>
+
+    <br>
+    <Submit
+      class="button is-block is-fullwidth is-dark is-medium is-rounded"
+      opts={[phx_disable_with: "Saving"]}
+    >
+      PLAY</Submit>
+  </Form>
+</div>

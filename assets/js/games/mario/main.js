@@ -1,27 +1,28 @@
-import './config';
+import Config from './config';
 import Game from './scenes/game';
 import Lose from './scenes/lose';
 
-loadSprite('tiles', './sprites/tilemap.png', {
-  sliceX: 20,
-  sliceY: 20,
-  anims: {
-    idle: { from: 300, to: 300 },
-    run: { from: 301, to: 303 },
-    jump: { from: 305, to: 305 },
-  },
-});
-console.log('SPRITE LOADED');
+export default function StartGame() {
+  Config();
 
-layers(['obj', 'ui'], 'obj');
+  loadSprite('tiles', './sprites/tilemap.png', {
+    sliceX: 20,
+    sliceY: 20,
+    anims: {
+      idle: { from: 300, to: 300 },
+      run: { from: 301, to: 303 },
+      jump: { from: 305, to: 305 },
+    },
+  });
 
-scene('game', Game);
-scene('lose', Lose);
+  layers(['obj', 'ui'], 'obj');
 
-scene('main', () => {
-  go('game', { level: 'levelOne', score: 0 });
-});
+  scene('game', Game);
+  scene('lose', Lose);
 
-export function startGame() {
+  scene('main', () => {
+    go('game', { level: 'levelOne', score: 0 });
+  });
+
   start('main');
 }

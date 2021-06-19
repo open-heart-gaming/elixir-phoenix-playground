@@ -1,5 +1,3 @@
-import '../config';
-
 export default function Lose(args = {}) {
   add([
     text(args.score),
