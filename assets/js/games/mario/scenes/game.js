@@ -1,7 +1,7 @@
 import LevelOne from '../levels/level_one';
 import LevelTwo from '../levels/level_two';
 import LevelCfg from '../levels/level_cfg';
-import Player from '../components/player';
+import { createCurrentPlayer, createPlayer } from '../components/player';
 
 const FALL_DEATH = 600;
 
@@ -20,15 +20,16 @@ export default function Game(args = {}) {
     { value: args.score },
   ]);
 
-  const player = Player();
+  createPlayer('GOGU');
+  const player = createCurrentPlayer(args.currentPlayerName);
 
   const isJumping = () => !player.grounded();
 
-  // player.action(() => {
-  //   if (player.pos.y >= FALL_DEATH) {
-  //     go('lose', { score: scoreLabel.value });
-  //   }
-  // });
+  player.action(() => {
+    if (player.pos.y >= FALL_DEATH) {
+      go('lose', { score: scoreLabel.value });
+    }
+  });
 
   action('player', (p) => {
     if (p.pos.y >= FALL_DEATH) {
@@ -70,6 +71,7 @@ export default function Game(args = {}) {
       go('game', {
         level: nextLevel[args.level],
         score: scoreLabel.value,
+        currentPlayerName: args.currentPlayerName,
       });
     });
   });

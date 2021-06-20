@@ -2,7 +2,7 @@ import Config from './config';
 import Game from './scenes/game';
 import Lose from './scenes/lose';
 
-export default function StartGame() {
+export const startGame = (currentPlayerName) => {
   Config();
 
   loadSprite('tiles', './sprites/tilemap.png', {
@@ -21,8 +21,12 @@ export default function StartGame() {
   scene('lose', Lose);
 
   scene('main', () => {
-    go('game', { level: 'levelOne', score: 0 });
+    go('game', {
+      level: 'levelOne',
+      score: 0,
+      currentPlayerName: currentPlayerName,
+    });
   });
 
   start('main');
-}
+};

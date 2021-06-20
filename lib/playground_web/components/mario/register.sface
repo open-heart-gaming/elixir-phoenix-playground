@@ -4,7 +4,7 @@
       <div class="control">
         <TextInput
           class="input is-medium is-rounded"
-          opts={placeholder: "Your cool captain name", required: true, minlength: 2, maxlength: 5}
+          opts={placeholder: "Player Name", required: true, minlength: 2, maxlength: 5}
         />
       </div>
     </Field>
