@@ -21,6 +21,8 @@ export default function Game(args = {}) {
   ]);
 
   createPlayer('GOGU');
+  createPlayer('PANDELE');
+
   const player = createCurrentPlayer(args.currentPlayerName);
 
   const isJumping = () => !player.grounded();

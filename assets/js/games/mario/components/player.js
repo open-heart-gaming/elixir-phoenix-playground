@@ -4,19 +4,18 @@ const MOVE_SPEED = 80;
 const JUMP_FORCE = 280;
 const BIG_JUMP_FORCE = 350;
 
-export let players = {};
-export let currentPlayer = {};
 export let currentPlayerName = '';
 
 export const createCurrentPlayer = (name) => {
-  const newCurrentPlayer = createPlayer(name);
+  const currentPlayer = createPlayer(name);
 
-  currentPlayer = newCurrentPlayer;
   currentPlayerName = name;
 
   currentPlayer.action(() => {
     camPos(currentPlayer.pos);
   });
+
+  handleCurrentPlayer();
 
   return currentPlayer;
 };
@@ -62,36 +61,53 @@ export const createPlayer = (name) => {
     { name: name },
   ]);
 
-  players[name] = newPlayer;
-
   handlePlayer(newPlayer);
 
   return newPlayer;
 };
 
-const handlePlayer = (player) => {
+const handleCurrentPlayer = () => {
   keyDown('left', () => {
     Event.push('key_down_left', { name: currentPlayerName });
-  });
-
-  Event.handle('key_down_left', ({ name }) => {
-    if (name == player.name) {
-      player.move(-MOVE_SPEED, 0);
-    }
   });
 
   keyDown('right', () => {
     Event.push('key_down_right', { name: currentPlayerName });
   });
 
+  keyPress('left', () => {
+    Event.push('key_press_left', { name: currentPlayerName });
+  });
+
+  keyPress('right', () => {
+    Event.push('key_press_right', { name: currentPlayerName });
+  });
+
+  keyPress('space', () => {
+    console.log('JUMP!');
+    Event.push('key_press_space', { name: currentPlayerName });
+  });
+
+  keyRelease('left', () => {
+    Event.push('key_release_left', { name: currentPlayerName });
+  });
+
+  keyRelease('right', () => {
+    Event.push('key_release_right', { name: currentPlayerName });
+  });
+};
+
+const handlePlayer = (player) => {
+  Event.handle('key_down_left', ({ name }) => {
+    if (name == player.name) {
+      player.move(-MOVE_SPEED, 0);
+    }
+  });
+
   Event.handle('key_down_right', ({ name }) => {
     if (name == player.name) {
       player.move(MOVE_SPEED, 0);
     }
-  });
-
-  keyPress('left', () => {
-    Event.push('key_press_left', { name: currentPlayerName });
   });
 
   Event.handle('key_press_left', ({ name }) => {
@@ -103,10 +119,6 @@ const handlePlayer = (player) => {
     }
   });
 
-  keyPress('right', () => {
-    Event.push('key_press_right', { name: currentPlayerName });
-  });
-
   Event.handle('key_press_right', ({ name }) => {
     if (name == player.name) {
       if (player.scale.x < 0) {
@@ -116,13 +128,8 @@ const handlePlayer = (player) => {
     }
   });
 
-  keyPress('space', () => {
-    Event.push('key_press_space', { name: currentPlayerName });
-  });
-
   Event.handle('key_press_space', ({ name }) => {
     if (name == player.name) {
-      console.log(player.name);
       if (player.grounded()) {
         if (player.isBig()) {
           player.jump(BIG_JUMP_FORCE);
@@ -134,18 +141,10 @@ const handlePlayer = (player) => {
     }
   });
 
-  keyRelease('left', () => {
-    Event.push('key_release_left', { name: currentPlayerName });
-  });
-
   Event.handle('key_release_left', ({ name }) => {
     if (name == player.name) {
       player.play('idle');
     }
-  });
-
-  keyRelease('right', () => {
-    Event.push('key_release_right', { name: currentPlayerName });
   });
 
   Event.handle('key_release_right', ({ name }) => {
