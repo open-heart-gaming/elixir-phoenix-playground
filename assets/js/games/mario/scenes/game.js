@@ -20,10 +20,10 @@ export default function Game(args = {}) {
     { value: args.score },
   ]);
 
-  createPlayer('GOGU');
-  createPlayer('PANDELE');
-
-  const player = createCurrentPlayer(args.currentPlayerName);
+  args.players.forEach((p) => {
+    createPlayer(p.name);
+  });
+  const player = createCurrentPlayer(args.currentPlayer.name);
 
   const isJumping = () => !player.grounded();
 

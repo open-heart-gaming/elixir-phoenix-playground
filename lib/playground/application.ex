@@ -14,9 +14,10 @@ defmodule Playground.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Playground.PubSub},
       # Start the Endpoint (http/https)
-      PlaygroundWeb.Endpoint
+      PlaygroundWeb.Endpoint,
       # Start a worker by calling: Playground.Worker.start_link(arg)
       # {Playground.Worker, arg}
+      Playground.Presence
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
